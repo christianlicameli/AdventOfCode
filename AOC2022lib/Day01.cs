@@ -20,7 +20,7 @@
                 }
                 else
                 {
-                    currentCalories = currentCalories + long.Parse(line.Trim());
+                    currentCalories += long.Parse(line.Trim());
                 }
             }
 
@@ -29,33 +29,31 @@
 
         private class Elf
         {
-            public string name { get; set; }
-            public long calories { get; set; }
+            public long Calories { get; set; }
         }
         public string B()
         {
             string[] lines = System.IO.File.ReadAllLines(@"InputFiles\D01A.txt");
 
-            List<Elf> elfList = new List<Elf>();
+            List<Elf> elfList = new();
 
-            int elfIndex = 0;
             long currentCalories = 0;
 
             foreach (string line in lines)
             {
                 if (string.IsNullOrEmpty(line.Trim()))
                 {
-                    //check numbers and go to next elf
-                    elfList.Add(new Elf() { name = $"Elf {++elfIndex}", calories = currentCalories });
+                    //store calories and go to next elf
+                    elfList.Add(new Elf() { Calories = currentCalories });
                     currentCalories = 0;
                 }
                 else
                 {
-                    currentCalories = currentCalories + long.Parse(line.Trim());
+                    currentCalories += long.Parse(line.Trim());
                 }
             }
 
-            return elfList.OrderByDescending(l => l.calories).Take(3).Sum(e => e.calories).ToString();
+            return elfList.OrderByDescending(l => l.Calories).Take(3).Sum(e => e.Calories).ToString();
         }
     }
 }
