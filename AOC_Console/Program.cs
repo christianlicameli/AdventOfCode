@@ -17,10 +17,13 @@ namespace AOC_Console
             //Console.WriteLine("2022 Day 02 A:  {0}", aoc2022d2.A());  
             //Console.WriteLine("2022 Day 02 B:  {0}", aoc2022d2.B());
 
-            AOC2022lib.Day03 aoc2022d3 = new();
-            Console.WriteLine("2022 Day 03 A:  {0}", aoc2022d3.A());  //15410 too hign
+            //AOC2022lib.Day03 aoc2022d3 = new();
+            //Console.WriteLine("2022 Day 03 A:  {0}", aoc2022d3.A());  
             //Console.WriteLine("2022 Day 03 B:  {0}", aoc2022d3.B());
 
+            AOC2022lib.Day04 aoc2022d4 = new();
+            //Console.WriteLine("2022 Day 04 A:  {0}", aoc2022d4.A()); //435 too low
+              Console.WriteLine("2022 Day 04 B:  {0}", aoc2022d4.B());
 
 
             Console.ReadLine();
